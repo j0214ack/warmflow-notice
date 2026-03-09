@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蟬說：暖硫 — 行前通知</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green: #6b7c5e;
+    --green-light: #8a9e78;
+    --green-pale: #d4dece;
+    --gold: #c4a96a;
+    --gold-light: #dbc48e;
+    --gold-pale: #f0e6cd;
+    --cream: #f7f3ed;
+    --cream-dark: #efe8dd;
+    --brown: #2c2416;
+    --brown-mid: #5a4a36;
+    --brown-light: #8a7a66;
+    --white: #fffdf9;
+    --shadow-sm: 0 1px 3px rgba(44,36,22,0.06), 0 1px 2px rgba(44,36,22,0.04);
+    --shadow-md: 0 4px 12px rgba(44,36,22,0.08), 0 2px 4px rgba(44,36,22,0.04);
+    --shadow-lg: 0 8px 24px rgba(44,36,22,0.1), 0 4px 8px rgba(44,36,22,0.05);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--brown);
+    background-color: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 0 60px;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(165deg, #3d4a33 0%, var(--green) 40%, #7a8d6c 100%);
+    color: var(--cream);
+    padding: 40px 24px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(196,169,106,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .brand {
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-label {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+  }
+
+  .brand-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .brand-sub {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(247,243,237,0.7);
+    letter-spacing: 1px;
+  }
+
+  .booking-strip {
+    position: relative;
+    z-index: 1;
+    margin-top: 24px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+  }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+  }
+
+  .booking-item {
+    font-size: 13px;
+    color: rgba(247,243,237,0.65);
+  }
+
+  .booking-item strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-top: 1px;
+  }
+
+  .booking-item.full-width {
+    grid-column: 1 / -1;
+  }
+
+  /* ── Greeting Banner ── */
+  .greeting {
+    background: linear-gradient(135deg, var(--white) 0%, var(--cream-dark) 100%);
+    border-bottom: 1px solid var(--green-pale);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .greeting-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .greeting h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  .greeting p {
+    font-size: 15px;
+    color: var(--brown-mid);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── Sections ── */
+  .content-area {
+    padding: 20px 16px 0;
+  }
+
+  .section {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(107,124,94,0.08);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 22px 16px;
+    border-bottom: 1px solid var(--cream-dark);
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .section-header:active {
+    background: var(--cream);
+  }
+
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .section-icon.green { background: var(--green-pale); }
+  .section-icon.gold { background: var(--gold-pale); }
+
+  .section-title {
+    flex: 1;
+  }
+
+  .section-title h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1.3;
+  }
+
+  .section-title .subtitle {
+    font-size: 12px;
+    color: var(--brown-light);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .chevron {
+    width: 20px;
+    height: 20px;
+    color: var(--brown-light);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .section.collapsed .chevron {
+    transform: rotate(-90deg);
+  }
+
+  .section-body {
+    padding: 18px 22px 22px;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease;
+  }
+
+  .section.collapsed .section-body {
+    max-height: 0 !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+  }
+
+  /* ── Content Elements ── */
+  .alert-box {
+    background: #fdf6e3;
+    border: 1px solid var(--gold-light);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .alert-box .alert-title {
+    font-weight: 700;
+    color: #a08030;
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .alert-box ul {
+    margin: 4px 0 0 6px;
+    padding-left: 14px;
+  }
+
+  .alert-box li {
+    margin-bottom: 4px;
+    color: var(--brown-mid);
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, var(--green-pale) 0%, #e2ead8 100%);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin: 12px 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--brown);
+  }
+
+  .highlight-box strong {
+    color: var(--green);
+  }
+
+  .address-block {
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: center;
+    color: var(--brown);
+  }
+
+  .address-block .tip {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--brown-light);
+    margin-top: 4px;
+  }
+
+  .route-label {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--green);
+    margin-top: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .route-label:first-child { margin-top: 0; }
+
+  .route-steps {
+    font-size: 15px;
+    color: var(--brown-mid);
+    line-height: 1.75;
+    padding-left: 4px;
+  }
+
+  .transit-item {
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .transit-item strong {
+    color: var(--green);
+  }
+
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: background 0.2s;
+  }
+
+  .link-btn:active { background: #5a6b4f; }
+
+  .link-btn.gold {
+    background: var(--gold);
+    color: var(--brown);
+  }
+
+  .link-btn.gold:active { background: #b39a5c; }
+
+  /* Schedule */
+  .schedule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    position: relative;
+  }
+
+  .schedule-item + .schedule-item {
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .schedule-time {
+    flex-shrink: 0;
+    width: 70px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green);
+    padding-top: 1px;
+  }
+
+  .schedule-desc {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--brown);
+  }
+
+  .schedule-desc .note {
+    font-size: 13px;
+    color: var(--brown-light);
+    margin-top: 2px;
+  }
+
+  .schedule-divider {
+    padding: 10px 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  /* Experience cards */
+  .exp-card {
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 18px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(107,124,94,0.1);
+  }
+
+  .exp-card:last-child { margin-bottom: 0; }
+
+  .exp-card h4 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .exp-card .tag {
+    display: inline-block;
+    background: var(--gold-light);
+    color: var(--brown);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .exp-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--brown-mid);
+    margin-bottom: 6px;
+  }
+
+  .exp-card .code-box {
+    background: var(--white);
+    border: 1px dashed var(--gold);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--brown);
+  }
+
+  .exp-card .code-box strong {
+    color: var(--gold);
+    font-size: 16px;
+    font-family: monospace;
+  }
+
+  /* List styles */
+  .rule-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .rule-list li {
+    position: relative;
+    padding: 10px 0 10px 28px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--brown);
+  }
+
+  .rule-list li + li {
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .rule-list li::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-size: 15px;
+  }
+
+  /* Visitor pricing */
+  .price-box {
+    background: linear-gradient(135deg, var(--gold-pale) 0%, #f5edda 100%);
+    border-radius: var(--radius-sm);
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .price-box .amount {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--brown);
+  }
+
+  .price-box .amount span {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--brown-mid);
+  }
+
+  .price-box .includes {
+    font-size: 14px;
+    color: var(--brown-mid);
+    margin-top: 4px;
+  }
+
+  .price-box .free {
+    font-size: 13px;
+    color: var(--brown-light);
+    margin-top: 4px;
+  }
+
+  /* Contact section */
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+    border: 1px solid rgba(107,124,94,0.08);
+  }
+
+  .contact-link:active {
+    background: var(--cream-dark);
+  }
+
+  .contact-link .c-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .contact-link .c-icon.green { background: var(--green-pale); }
+  .contact-link .c-icon.gold { background: var(--gold-pale); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 32px 24px 20px;
+    font-size: 13px;
+    color: var(--brown-light);
+    line-height: 1.7;
+  }
+
+  .footer .brand-footer {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  /* ── Tablet+ ── */
+  @media (min-width: 520px) {
+    .content-area { padding: 28px 24px 0; }
+    .section-body { padding: 22px 26px 26px; }
+    .section-header { padding: 22px 26px 18px; }
+    .booking-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .header { padding: 48px 32px 36px; }
+    .brand-name { font-size: 36px; }
+  }
+
+  @media (min-width: 768px) {
+    .page-wrapper { max-width: 680px; }
+    body { font-size: 18px; }
+    .section-title h3 { font-size: 22px; }
+    .schedule-time { width: 90px; font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">
+      <div class="brand-label">Pre-Trip Notice</div>
+      <h1 class="brand-name">蟬說：暖硫</h1>
+      <div class="brand-sub">Warmflow &middot; 陽明山菁山</div>
+    </div>
+    <div class="booking-strip">
+      <div class="booking-grid">
+        <div class="booking-item">
+          入住
+          <strong>2026/03/21（六）</strong>
+        </div>
+        <div class="booking-item">
+          退房
+          <strong>2026/03/22（日）</strong>
+        </div>
+        <div class="booking-item">
+          訂單
+          <strong>#107929</strong>
+        </div>
+        <div class="booking-item">
+          訂房人
+          <strong>葉宇峻</strong>
+        </div>
+        <div class="booking-item full-width">
+          房型
+          <strong>俯雲 × 13帳</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Greeting -->
+  <div class="greeting">
+    <div class="greeting-icon">🌿</div>
+    <h2>歡迎 E東網路扶輪社社友</h2>
+    <p>感謝報名參加本次陽明山露營活動，以下為行前重要資訊，請務必詳閱。</p>
+  </div>
+
+  <div class="content-area">
+
+    <!-- 1. 交通資訊 -->
+    <section class="section" id="transport">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-icon green">🚗</div>
+        <div class="section-title">
+          <h3>交通資訊</h3>
+          <div class="subtitle">Transportation</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="section-body">
+        <div class="address-block">
+          📍 台北市士林區菁山路101巷71弄16號<br>
+          <span style="font-size:14px;">（菁山休憩園區內）</span>
+          <div class="tip">Google 搜尋「蟬說：暖硫」即可導航</div>
+        </div>
+
+        <div class="route-label">🚘 自行開車</div>
+        <div class="route-steps">
+          重慶北路交流道 → 百齡橋 → 中正路 → 福林路 → 仰德大道 → 菁山路右轉 → 101巷左轉 → 71弄左轉
+        </div>
+
+        <div class="alert-box">
+          <div class="alert-title">⚠️ 週六仰德大道管制 — 替代路線</div>
+          <ul>
+            <li>福林路 → 至善路 → 溪山產業道路 → 平菁路 → 菁山路101巷</li>
+            <li>石牌 → 行義路 → 泉源路 → 紗帽路 → 菁山路101巷</li>
+            <li>天母東路 → 中山北路 → 紗帽路 → 菁山路101巷</li>
+            <li>內湖 → 碧山路 → 萬溪產業道路 → 平菁路 → 菁山路101巷</li>
+          </ul>
+        </div>
+
+        <div class="route-label">🚌 大眾運輸</div>
+        <div class="transit-item">
+          <strong>捷運劍潭站</strong><br>
+          小15區 → 菁山遊憩區（直達）<br>
+          小15 → 絹絲瀑布下車，步行約10分鐘
+        </div>
+        <div class="transit-item">
+          <strong>冷水坑服務站</strong><br>
+          108公車 → 菁山遊憩區
+        </div>
+
+        <div class="route-label">🚐 包車服務（旅步）</div>
+        <div class="transit-item">
+          折扣碼：<strong>WF2025</strong>｜出發前 2 小時預約<br>
+          <a href="https://lihi.cc/0Hyhe" class="link-btn gold" target="_blank" rel="noopener">前往預約包車 →</a>
+        </div>
+
+        <div class="highlight-box">
+          <strong>🅿️ 入園提醒：</strong>沿車道往上開，看到左手邊廣場及白色餐車即為報到處。<br>
+          <span style="font-size:14px;color:var(--brown-light);">園區內另有「陽明溫泉度假村」為不同公司，請勿搞混。</span>
+        </div>
+
+        <a href="https://maac.io/3lNtz" class="link-btn" target="_blank" rel="noopener">🗺️ 查看園區地圖</a>
+      </div>
+    </section>
+
+    <!-- 2. 入住須知 -->
+    <section class="section" id="checkin">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-icon gold">📋</div>
+        <div class="section-title">
+          <h3>入住須知</h3>
+          <div class="subtitle">Check-in Rules</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="section-body">
+        <ul class="rule-list">
+          <li data-icon="🪥">自備一次性備品（牙刷、牙膏等）及能碰水的拖鞋</li>
+          <li data-icon="🔥">全面禁止炊煮、明火、烤肉、煙火<span style="font-size:14px;color:var(--brown-light);">（陽明山國家公園規定）</span></li>
+          <li data-icon="🍱">不建議攜帶外食，攜帶多垃圾外食將酌收清潔費</li>
+          <li data-icon="❄️">帳內備有冷氣，請勿自帶電器以免跳電</li>
+          <li data-icon="🦟">早晚偏涼、蚊蟲較多，請攜帶保暖衣物及防蚊用品</li>
+          <li data-icon="⛺">外出請隨手關帳篷拉鍊，遇野生動物禁止餵食</li>
+          <li data-icon="🤫">22:00 後請降低音量</li>
+          <li data-icon="👥">入住人數不可超過訂房人數</li>
+          <li data-icon="🚬">園區設有吸菸區</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. 寵物規定 -->
+    <section class="section" id="pets">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-icon green">🐕</div>
+        <div class="section-title">
+          <h3>寵物規定</h3>
+          <div class="subtitle">Pet Policy</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="section-body">
+        <ul class="rule-list">
+          <li data-icon="🐾">部分森浴區、俯雲區開放寵物友善（僅限狗）</li>
+          <li data-icon="💰">每日每隻 $550 清潔費</li>
+          <li data-icon="💵">入住繳交 $2,000 現金押金，退房確認無損後歸還</li>
+          <li data-icon="🚫">禁止攜帶寵物進入溫泉湯屋</li>
+        </ul>
+        <a href="https://chanshuo.life/6APYm" class="link-btn" target="_blank" rel="noopener">📄 閱讀寵物公約</a>
+      </div>
+    </section>
+
+    <!-- 4. 當日園區時程表 -->
+    <section class="section" id="schedule">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-icon gold">🕐</div>
+        <div class="section-title">
+          <h3>當日園區時程表</h3>
+          <div class="subtitle">Day Schedule</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="section-body">
+        <div class="schedule-item">
+          <div class="schedule-time">14:00</div>
+          <div class="schedule-desc">辦理入住（報到）</div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">14:30</div>
+          <div class="schedule-desc">
+            迎賓小點 ＋ 手作 DIY
+            <div class="note">至 16:00</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">16:00</div>
+          <div class="schedule-desc">進入帳篷</div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">18:00</div>
+          <div class="schedule-desc">
+            晚餐：職人手作炙燒盛合 ＋ 無限量自助餐
+            <div class="note">至 20:00 ｜最晚開餐後 30 分鐘內入場</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">22:00</div>
+          <div class="schedule-desc">降低音量・就寢</div>
+        </div>
+
+        <div class="schedule-divider">— 翌 日 —</div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">07:30</div>
+          <div class="schedule-desc">
+            早餐：中西式自助
+            <div class="note">至 09:30 ｜最晚 09:00 前入場</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">11:00</div>
+          <div class="schedule-desc">退房</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 加購體驗項目 -->
+    <section class="section" id="addons">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-icon green">✨</div>
+        <div class="section-title">
+          <h3>加購體驗項目</h3>
+          <div class="subtitle">Add-on Experiences</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="section-body">
+        <div class="exp-card">
+          <span class="tag">冬季限定 1/1 – 4/30</span>
+          <h4>🍵 火山上的圍爐煮茶</h4>
+          <p>80 分鐘沉浸式體驗，搭配 9 宮格精緻茶點，在火山地熱的氤氳中品茗。</p>
+          <div class="code-box">
+            輸入優惠碼 <strong>wintea26</strong> 現折 $200
+          </div>
+          <a href="https://chanshuo.life/Lv0l2" class="link-btn gold" target="_blank" rel="noopener">立即預約 →</a>
+        </div>
+
+        <div class="exp-card">
+          <span class="tag">現場限定</span>
+          <h4>♨️ 白川湯景觀風呂泡湯</h4>
+          <p>60 分鐘獨享冷水坑第一道白硫磺泉，享受獨立景觀湯屋。</p>
+          <ul class="rule-list" style="margin-top:8px;">
+            <li data-icon="⏰" style="font-size:15px;">假日 14:30 ~ 翌日 02:30</li>
+            <li data-icon="📌" style="font-size:15px;">僅現場加購，14:30 先到先約</li>
+            <li data-icon="📵" style="font-size:15px;">不接受電話 / 線上預約</li>
+            <li data-icon="ℹ️" style="font-size:15px;">湯屋為獨立會館，帳篷內無溫泉無床鋪</li>
+            <li data-icon="🚫" style="font-size:15px;">禁止攜帶寵物</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 訪客須知 -->
+    <section class="section" id="visitors">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-icon gold">👋</div>
+        <div class="section-title">
+          <h3>訪客須知</h3>
+          <div class="subtitle">Visitor Info</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="section-body">
+        <div class="price-box">
+          <div class="amount">NT$300 <span>/ 人</span></div>
+          <div class="includes">含 DIY 體驗、下午茶、停車</div>
+          <div class="free">90cm 以下免收費</div>
+        </div>
+        <ul class="rule-list">
+          <li data-icon="🕙">訪客請於 22:00 前離場</li>
+          <li data-icon="📞">房客需提前告知訪客到訪</li>
+          <li data-icon="🌙">訪客如需過夜，須補足露營費用</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. 聯絡資訊 -->
+    <section class="section" id="contact">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-icon green">📞</div>
+        <div class="section-title">
+          <h3>聯絡資訊</h3>
+          <div class="subtitle">Contact</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="section-body">
+        <div class="contact-links">
+          <a href="https://www.chanshuo.tw/warmflow-zh/" class="contact-link" target="_blank" rel="noopener">
+            <div class="c-icon green">🌐</div>
+            <div>
+              <div>官方網站</div>
+              <div style="font-size:13px;color:var(--brown-light);">chanshuo.tw</div>
+            </div>
+          </a>
+          <a href="https://maac.io/3vPEj" class="contact-link" target="_blank" rel="noopener">
+            <div class="c-icon green">💬</div>
+            <div>
+              <div>LINE 好友</div>
+              <div style="font-size:13px;color:var(--brown-light);">即時客服諮詢</div>
+            </div>
+          </a>
+          <a href="https://maac.io/3lNtz" class="contact-link" target="_blank" rel="noopener">
+            <div class="c-icon gold">🗺️</div>
+            <div>
+              <div>園區地圖</div>
+              <div style="font-size:13px;color:var(--brown-light);">設施位置導覽</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="brand-footer">蟬說：暖硫</div>
+    台北市士林區菁山路101巷71弄16號<br>
+    期待與您在山上相見 🌿
+  </footer>
+
+</div>
+
+<script>
+function toggleSection(header) {
+  const section = header.closest('.section');
+  section.classList.toggle('collapsed');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.section-body').forEach(body => {
+    body.style.maxHeight = body.scrollHeight + 200 + 'px';
+  });
+});
+</script>
+
+</body>
+</html>
