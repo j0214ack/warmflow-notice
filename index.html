@@ -114,36 +114,70 @@
   .booking-strip {
     position: relative;
     z-index: 1;
-    margin-top: 24px;
+    margin-top: 16px;
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius-sm);
-    padding: 16px 18px;
-  }
-
-  .booking-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 16px;
-  }
-
-  .booking-item {
-    font-size: 13px;
-    color: rgba(247,243,237,0.65);
-  }
-
-  .booking-item strong {
-    display: block;
-    font-size: 15px;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--cream);
-    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 0;
   }
 
-  .booking-item.full-width {
-    grid-column: 1 / -1;
+  .booking-sep {
+    margin: 0 8px;
+    opacity: 0.35;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    padding: 20px 20px 8px;
+  }
+
+  .toc-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--brown-light);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: var(--white);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid rgba(107,124,94,0.08);
+    transition: background 0.15s;
+  }
+
+  .toc-item:active {
+    background: var(--cream-dark);
+  }
+
+  .toc-item .toc-emoji {
+    font-size: 18px;
+    flex-shrink: 0;
   }
 
   /* ── Greeting Banner ── */
@@ -626,7 +660,6 @@
     .content-area { padding: 28px 24px 0; }
     .section-body { padding: 22px 26px 26px; }
     .section-header { padding: 22px 26px 18px; }
-    .booking-grid { grid-template-columns: 1fr 1fr 1fr; }
     .header { padding: 48px 32px 36px; }
     .brand-name { font-size: 36px; }
   }
@@ -651,28 +684,11 @@
       <div class="brand-sub">Warmflow &middot; 陽明山菁山</div>
     </div>
     <div class="booking-strip">
-      <div class="booking-grid">
-        <div class="booking-item">
-          入住
-          <strong>2026/03/21（六）</strong>
-        </div>
-        <div class="booking-item">
-          退房
-          <strong>2026/03/22（日）</strong>
-        </div>
-        <div class="booking-item">
-          訂單
-          <strong>#107929</strong>
-        </div>
-        <div class="booking-item">
-          訂房人
-          <strong>葉宇峻</strong>
-        </div>
-        <div class="booking-item full-width">
-          房型
-          <strong>俯雲 × 13帳</strong>
-        </div>
-      </div>
+      <span>葉宇峻</span>
+      <span class="booking-sep">|</span>
+      <span>03/21（六）→ 03/22（日）</span>
+      <span class="booking-sep">|</span>
+      <span>#107929</span>
     </div>
   </header>
 
@@ -682,6 +698,19 @@
     <h2>歡迎 E東網路扶輪社社友</h2>
     <p>感謝報名參加本次陽明山露營活動，以下為行前重要資訊，請務必詳閱。</p>
   </div>
+
+  <!-- TOC -->
+  <nav class="toc">
+    <div class="toc-label">快速跳轉</div>
+    <div class="toc-grid">
+      <a href="#transport" class="toc-item"><span class="toc-emoji">🚗</span>交通資訊</a>
+      <a href="#checkin" class="toc-item"><span class="toc-emoji">📋</span>入住須知</a>
+      <a href="#pets" class="toc-item"><span class="toc-emoji">🐕</span>寵物規定</a>
+      <a href="#schedule" class="toc-item"><span class="toc-emoji">🕐</span>園區時程</a>
+      <a href="#addons" class="toc-item"><span class="toc-emoji">✨</span>加購體驗</a>
+      <a href="#visitors" class="toc-item"><span class="toc-emoji">👋</span>訪客須知</a>
+    </div>
+  </nav>
 
   <div class="content-area">
 
